@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, DTDeviceDelegate {
+class ViewController: UIViewController, DTDeviceDelegate, UITextFieldDelegate {
     
     let scanner : DTDevices = DTDevices()
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginView: UIView!
+    @IBOutlet weak var userNameField: UITextField!
 
     override func viewDidLoad() {
         
@@ -23,6 +27,18 @@ class ViewController: UIViewController, DTDeviceDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //testing scanner
+        
+        
+        //LoginView setup
+        
+        self.view.backgroundColor = UIColor.clearColor()
+        self.loginView.layer.cornerRadius = 5.0
+        self.loginView.layer.borderColor = UIColor.blackColor().CGColor
+        self.loginView.layer.borderWidth = 1.0
+        //self.userNameField.targetForAction(Selector("valueChangedForTextField:"), withSender: self)
+        self.userNameField.delegate = self
+        self.passwordField.delegate = self
+        
         
     }
 
