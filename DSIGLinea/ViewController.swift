@@ -8,11 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DTDeviceDelegate {
+    
+    let scanner : DTDevices = DTDevices()
 
     override func viewDidLoad() {
+        
+        //loading scanner
+        self.scanner.delegate = self
+        self.scanner.connect()
+        
+        //code to test scanner
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //testing scanner
+        
     }
 
     override func didReceiveMemoryWarning() {

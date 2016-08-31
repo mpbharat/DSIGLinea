@@ -15,6 +15,8 @@
 		D00F4E411D76856E00BF8131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00F4E3F1D76856E00BF8131 /* LaunchScreen.storyboard */; };
 		D00F4E4C1D76856F00BF8131 /* DSIGLineaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F4E4B1D76856F00BF8131 /* DSIGLineaTests.swift */; };
 		D00F4E571D76856F00BF8131 /* DSIGLineaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F4E561D76856F00BF8131 /* DSIGLineaUITests.swift */; };
+		D00F4E651D7689E000BF8131 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00F4E641D7689E000BF8131 /* ExternalAccessory.framework */; };
+		D00F4E681D7689FE00BF8131 /* libdtdev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D00F4E671D7689FE00BF8131 /* libdtdev.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		D00F4E521D76856F00BF8131 /* DSIGLineaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSIGLineaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00F4E561D76856F00BF8131 /* DSIGLineaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSIGLineaUITests.swift; sourceTree = "<group>"; };
 		D00F4E581D76856F00BF8131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D00F4E641D7689E000BF8131 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		D00F4E661D7689FE00BF8131 /* DTDevices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTDevices.h; sourceTree = "<group>"; };
+		D00F4E671D7689FE00BF8131 /* libdtdev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdtdev.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00F4E651D7689E000BF8131 /* ExternalAccessory.framework in Frameworks */,
+				D00F4E681D7689FE00BF8131 /* libdtdev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,9 @@
 		D00F4E271D76856E00BF8131 = {
 			isa = PBXGroup;
 			children = (
+				D00F4E661D7689FE00BF8131 /* DTDevices.h */,
+				D00F4E671D7689FE00BF8131 /* libdtdev.a */,
+				D00F4E641D7689E000BF8131 /* ExternalAccessory.framework */,
 				D00F4E321D76856E00BF8131 /* DSIGLinea */,
 				D00F4E4A1D76856F00BF8131 /* DSIGLineaTests */,
 				D00F4E551D76856F00BF8131 /* DSIGLineaUITests */,
@@ -410,9 +420,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DSIGLinea/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DSIG.DSIGLinea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = DTDevices.h;
 			};
 			name = Debug;
 		};
@@ -424,9 +439,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DSIGLinea/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DSIG.DSIGLinea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = DTDevices.h;
 			};
 			name = Release;
 		};
