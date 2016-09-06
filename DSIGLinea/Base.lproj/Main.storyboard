@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Tv-oZ-wVB">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Tv-oZ-wVB">
                                 <rect key="frame" x="89" y="96" width="380" height="380"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Kd-Si-jh1" userLabel="LoginView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Kd-Si-jh1" userLabel="LoginView">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="380"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="43i-Wg-RpV">
@@ -48,6 +48,13 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm5-DE-c7e">
+                                                        <rect key="frame" x="159" y="183" width="38" height="30"/>
+                                                        <state key="normal" title="Login"/>
+                                                        <connections>
+                                                            <action selector="showUserAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tcV-iz-OwC"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -76,18 +83,81 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Tv-oZ-wVB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X3b-9B-1Do"/>
+                            <constraint firstItem="0Tv-oZ-wVB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q8K-S3-RTx"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="evC-6t-mjB" id="6G5-pu-Rqw"/>
                         <outlet property="userNameField" destination="TEC-Z0-6vL" id="gSI-Zu-HyA"/>
+                        <segue destination="wJa-bD-KrC" kind="presentation" identifier="loginToTabBar" modalPresentationStyle="fullScreen" id="LR7-YS-qma"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="461" y="197"/>
+            <point key="canvasLocation" x="65" y="-103"/>
+        </scene>
+        <!--List Cases-->
+        <scene sceneID="0qG-RE-RoV">
+            <objects>
+                <viewController id="yOa-0j-y83" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aCN-EN-3ZD"/>
+                        <viewControllerLayoutGuide type="bottom" id="AqA-TG-IJe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dI2-v3-JIw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="List Cases" id="Gl9-BH-1Hi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXQ-BY-Hx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="1132"/>
+        </scene>
+        <!--Scan File-->
+        <scene sceneID="2Op-hw-eME">
+            <objects>
+                <viewController id="b83-KH-MGi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GOr-bz-m6N"/>
+                        <viewControllerLayoutGuide type="bottom" id="MKi-Nx-28T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8i5-Uy-rvA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scan File" image="barcodeImg2" selectedImage="barcodeImg1" id="XMe-HH-9aF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jR4-9c-Pu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="471"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qmQ-Ry-BWq">
+            <objects>
+                <tabBarController id="wJa-bD-KrC" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Uux-On-t6K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="b83-KH-MGi" kind="relationship" relationship="viewControllers" id="tQh-rB-kZG"/>
+                        <segue destination="yOa-0j-y83" kind="relationship" relationship="viewControllers" id="jUU-j0-9Ld"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRO-D4-tMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="65" y="802"/>
         </scene>
     </scenes>
     <resources>
+        <image name="barcodeImg1" width="43" height="15"/>
+        <image name="barcodeImg2" width="43" height="43"/>
         <image name="lockimg" width="30" height="32"/>
     </resources>
 </document>
